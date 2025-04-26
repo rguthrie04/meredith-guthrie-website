@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
 
   // Passthrough Copy for CSS
   eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/admin");
 
   // Date formatting filter using Luxon
   eleventyConfig.addFilter("formatDate", (dateObj, format = "yyyy") => {

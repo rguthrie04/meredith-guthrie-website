@@ -4,6 +4,9 @@ node_modules/
 # Build output directory
 _site/
 
+# Firebase cache/config
+.firebase/
+
 # Logs
 npm-debug.log*
 yarn-debug.log*

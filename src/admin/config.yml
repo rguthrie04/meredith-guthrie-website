@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: rguthrie04/meredith-guthrie-website # Your repo path
+  branch: main # Branch to update
+
+# Optional: Configure location for media files (e.g., images)
+# media_folder: "src/img/uploads"
+# public_folder: "/img/uploads"
+
+collections:
+  # Collection for regular pages (About, Services, Contact)
+  - name: "pages"
+    label: "Pages"
+    label_singular: "Page"
+    description: "Edit the main website pages (About, Services, Contact)."
+    folder: "src/pages" # The folder where page markdown files are stored
+    create: false # Prevent creating new files in this collection via CMS
+    slug: "{{slug}}" # Use the filename as the slug
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Permalink", name: "permalink", widget: "hidden"} # Hide permalink, managed by file structure/name
+      - {label: "Body", name: "body", widget: "markdown"}
+    # Specify which files can be edited
+    files:
+      - label: "Homepage"
+        name: "index"
+        file: "src/pages/index.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "base.njk"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Permalink", name: "permalink", widget: "hidden", default: "/"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "About Page"
+        name: "about"
+        file: "src/pages/about.md"
+      - label: "Services Page"
+        name: "services"
+        file: "src/pages/services.md"
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/pages/contact.md"
+
+  # Collection for Insights (Blog Posts)
+  - name: "insights"
+    label: "Insights"
+    label_singular: "Insight"
+    folder: "src/posts" # Folder for insight markdown files
+    create: true # Allow creating new insights
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename format: YYYY-MM-DD-title.md
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"} 
