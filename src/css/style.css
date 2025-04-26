@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --dark-blue: #33658A;
+  --light-blue: #86BBD8;
+  --dark-slate-gray: #2F4858;
+  --yellow-orange: #F6AE2D;
+  --off-white: #F8F9FA;
+  --text-dark: #333;
+  --text-light: #fff;
+}
+
+body {
+  font-family: 'Lato', sans-serif; /* Use Lato for body text */
+  margin: 0;
+  padding: 0;
+  background-color: var(--off-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif; /* Use Merriweather for headings */
+  color: var(--dark-blue);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--yellow-orange);
+  text-decoration: underline;
+}
+
+header {
+  background-color: var(--dark-slate-gray);
+  color: var(--text-light);
+  padding: 1.5rem 2rem; /* Increased vertical padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* For mobile */
+}
+
+header h1 {
+  font-family: 'Merriweather', serif; /* Ensure header site title uses heading font */
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+header h1 a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.6rem; /* Slightly larger site title */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 0.6rem 0.8rem; /* Adjusted padding */
+  border-radius: 4px; /* Add border-radius here for consistency */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition */
+}
+
+header nav a:hover,
+header nav a:focus {
+  background-color: var(--dark-blue);
+  color: var(--text-light);
+  text-decoration: none;
+  /* border-radius is already set above */
+}
+
+main {
+  padding: 2rem 2.5rem; /* Adjust horizontal padding */
+  max-width: 760px; /* Slightly narrower max-width */
+  margin: 3rem auto; /* Increase top/bottom margin */
+  background-color: #fff;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 4px; /* Subtle rounded corners */
+}
+
+footer {
+  background-color: var(--dark-slate-gray);
+  color: var(--light-blue);
+  text-align: center;
+  padding: 1.5rem 1rem; /* Adjusted padding */
+  margin-top: 4rem; /* More space above footer */
+  font-size: 0.9rem;
+  border-top: 3px solid var(--dark-blue); /* Add top border */
+}
+
+/* Basic Responsive (Mobile First Idea) */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  header nav li {
+     width: 100%;
+  }
+
+  header nav a {
+     display: block; /* Make links take full width */
+     text-align: center;
+  }
+
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+/* Placeholder for images */
+img.placeholder {
+    background-color: var(--light-blue);
+    border: 1px dashed var(--dark-blue);
+    display: block;
+    width: 100%;
+    min-height: 200px; /* Example minimum height */
+    text-align: center;
+    line-height: 200px; /* Vertically center text */
+    color: var(--dark-blue);
+    font-style: italic;
+}
+
+/* --- Insights Page List Styling --- */
+main ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+main ul li {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+main ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+main ul li h3 {
+  margin-bottom: 0.25rem;
+}
+
+main ul li h3 a {
+  text-decoration: none;
+}
+
+main ul li p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+main ul li time {
+  color: var(--dark-slate-gray);
+  font-style: italic;
+}
+
+main ul li a[href*="/posts/"] { /* Style the 'Read more' link */
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+main ul li a[href*="/posts/"]:hover {
+  color: var(--yellow-orange);
+  text-decoration: underline;
+}
+
+/* Article Styling (for individual posts and general content) */
+article header h2 {
+    margin-bottom: 0.25rem;
+}
+
+article header p {
+    margin-top: 0;
+    color: #555;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+article hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 2rem 0;
+}
+
+/* --- End Insights/Article Styling --- */
+
+/* --- Basic Element Styling --- */
+blockquote {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--off-white);
+  border-left: 5px solid var(--light-blue);
+  font-style: italic;
+  color: var(--dark-slate-gray);
+}
+
+code {
+  font-family: monospace;
+  background-color: #eef;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 4px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+/* --- End Basic Element Styling --- */ 

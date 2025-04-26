@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+
+<article>
+  <header>
+    <h2>{{ title }}</h2>
+    {% if date %}
+      <p><time datetime="{{ date | formatDate('yyyy-LL-dd') }}">{{ date | readableDate }}</time></p>
+    {% endif %}
+    {# Add other metadata like author or tags if needed later #}
+  </header>
+
+  {{ content | safe }}
+
+</article>
+
+{# Optional: Add navigation to next/previous post if desired later #}
+<hr>
+<p><a href="/insights/">&larr; Back to Insights</a></p> 
