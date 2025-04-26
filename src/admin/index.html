@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
 
+  <!-- Explicitly include Netlify Identity Widget (for interception) -->
+  <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   <!-- Prevent Netlify Identity auto-init -->
   <script>
     if (window.netlifyIdentity) {
