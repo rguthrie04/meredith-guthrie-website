@@ -2,6 +2,9 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
 
+  // Ignore the admin directory for template processing
+  eleventyConfig.ignores.add("src/admin");
+
   // Passthrough Copy for CSS
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/admin");
